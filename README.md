@@ -17,7 +17,7 @@ flowchart LR
     F --> J
     G --> J
     D --> J
-
+```
 ## 🧩 Application Architecture Diagram
 
 The following diagram represents the layered architecture of the application, including configuration, utilities, HTTP APIs, security, database access, and response handling:
@@ -78,3 +78,4 @@ SqlBaseMethod --> Logger
 SqlBaseMethod --> ConfigurationHelper
 TableInitializer --> SqlBaseMethod
 FileUtils --> Logger
+```
