@@ -1,1 +1,19 @@
-<pre> ```mermaid flowchart LR A[Client Request] B[BaseRoute: route matching] C[JwtSecurity: token validation] D[Service Layer: HttpClient / EdgeService] DB[[SQLite DB]] E[SqlBaseMethod: DB query] F[FormulaFlatterUtility: flatten formulas] G[ArithmeticUtility: evaluate expressions] H[ResponseMessage: build response] I[Client Response] J[Logger: logging] A --> B --> C --> D D --E--> DB D --> F --> G E --> H G --> H --> I C --> J E --> J F --> J G --> J D --> J ``` </pre>
+## 📊 Request Flow Diagram
+
+```mermaid
+flowchart LR
+    A[Client Request] --> B[BaseRoute: route matching]
+    B --> C[JwtSecurity: token validation]
+    C --> D[Service Layer: HttpClient / EdgeService]
+    D --> E[SqlBaseMethod: DB query]
+    E --> DB[[SQLite DB]]
+    D --> F[FormulaFlatterUtility: flatten formulas]
+    F --> G[ArithmeticUtility: evaluate expressions]
+    E --> H[ResponseMessage: build response]
+    G --> H --> I[Client Response]
+
+    C --> J[Logger: logging]
+    E --> J
+    F --> J
+    G --> J
+    D --> J
