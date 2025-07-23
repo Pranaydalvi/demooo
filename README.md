@@ -1,0 +1,42 @@
+flowchart LR
+
+A[Client Request]
+
+B[BaseRoute: route matching]
+
+C[JwtSecurity: token validation]
+
+D[Service Layer: HttpClient / EdgeService]
+
+DB [(SQLite DB)]
+
+E[SqlBaseMethod: DB query]
+
+F[FormulaFlatterUtility: flatten formulas]
+
+G[ArithmeticUtility: evaluate expressions]
+
+H[ResponseMessage: build response]
+
+I[Client Response]
+
+J[Logger: logging]
+
+A--> B--> C--> D
+
+D--E--> DB
+
+D-->F--> G
+E --> H
+
+G--> H --> I
+
+C--> J
+
+E--> J
+
+F--> J
+
+G--> J
+
+D-->J
